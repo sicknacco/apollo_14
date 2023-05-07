@@ -1,0 +1,11 @@
+<h1>Astronaut's Index Page</h1>
+
+<ul>
+  <% @astronauts.each do |astronaut| %>
+    <li id="astronauts_<%= astronaut.id %>">
+    Name: <%= astronaut.name %>
+    Age: <%= astronaut.age %>
+    Job: <%= astronaut.job %>
+    </li>
+  <% end %>
+</ul>
