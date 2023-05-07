@@ -1,3 +1,30 @@
+def test_data  
+  @tim = Astronaut.create!(name: "Tim Timson", age: 84, job: "Skipper")
+  @phil = Astronaut.create!(name: "Dr. Phil", age: 35, job: "Doctor")
+  @frank = Astronaut.create!(name: "Frank Frankfurt", age: 41, job: "Engineer")
+  @al = Astronaut.create!(name: "Albert Albetross", age: 32, job: "Who Knows")
+
+  @mission1 = Mission.create!(title: "Apollo 13", time_in_space: 43)
+  @mission2 = Mission.create!(title: "Capricorn 4", time_in_space: 28)
+  @mission3 = Mission.create!(title: "Gemini 7", time_in_space: 80)
+  @mission4 = Mission.create!(title: "Leo 9", time_in_space: 65)
+
+  AstronautMission.create!(astronaut: @tim, mission:@mission1)
+  AstronautMission.create!(astronaut: @tim, mission:@mission2)
+
+  AstronautMission.create!(astronaut: @phil, mission:@mission1)
+  AstronautMission.create!(astronaut: @phil, mission:@mission3)
+
+  AstronautMission.create!(astronaut: @frank, mission:@mission2)
+  AstronautMission.create!(astronaut: @frank, mission:@mission3)
+
+  AstronautMission.create!(astronaut: @al, mission:@mission1)
+  AstronautMission.create!(astronaut: @al, mission:@mission2)
+  AstronautMission.create!(astronaut: @al, mission:@mission3)
+  AstronautMission.create!(astronaut: @al, mission:@mission4)
+end
+
+
 require 'simplecov'
 SimpleCov.start
 # This file is copied to spec/ when you run 'rails generate rspec:install'
