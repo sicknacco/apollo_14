@@ -3,9 +3,13 @@
 <ul>
   <% @astronauts.each do |astronaut| %>
     <li id="astronauts_<%= astronaut.id %>">
-    Name: <%= astronaut.name %>
-    Age: <%= astronaut.age %>
-    Job: <%= astronaut.job %>
+    Name: <%= astronaut.name %>,
+    Age: <%= astronaut.age %>,
+    Job: <%= astronaut.job %>,
+    Missions:
+      <% astronaut.missions.each do |mission| %>
+      <%= mission.title %>
+      <% end %>
     </li>
   <% end %>
 </ul>
