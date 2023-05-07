@@ -30,7 +30,7 @@ RSpec.describe "Astronauts Index Page", type: :feature do
     
     it 'shows missions for each astronaut in alphabetical order' do
       visit '/astronauts'
-save_and_open_page
+
       within "#astronauts_#{@tim.id}" do
         expect(page).to have_content(@mission1.title)
         expect(page).to have_content(@mission2.title)
